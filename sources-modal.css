@@ -1,0 +1,249 @@
+/* UniVerse — shared Data Sources modal.
+   Consumes assets/css/tokens.css custom properties only. See docs/SPEC.md §4, §5.4, §9.
+   Markup for this component is built entirely by assets/js/sources-modal.js. */
+
+.usm-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity .18s ease;
+}
+
+.usm-backdrop.is-open {
+  opacity: 1;
+}
+
+.usm-backdrop[hidden] {
+  display: none;
+}
+
+.usm-dialog {
+  background: var(--surface);
+  color: var(--ink);
+  width: 100%;
+  max-width: 560px;
+  max-height: 80vh;
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-float);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(12px) scale(.98);
+  opacity: 0;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.usm-backdrop.is-open .usm-dialog {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.usm-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 22px 24px 16px;
+  border-bottom: 1px solid var(--hairline);
+  flex: 0 0 auto;
+}
+
+.usm-title {
+  margin: 0 0 4px;
+  font: var(--h3);
+  color: var(--ink);
+}
+
+.usm-subtitle {
+  margin: 0;
+  font: var(--body-sm);
+  color: var(--muted);
+}
+
+.usm-close {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--ink);
+  border-radius: var(--r-tile);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+}
+
+.usm-close:hover {
+  background: var(--canvas);
+}
+
+.usm-body {
+  padding: 20px 24px 24px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+.usm-section {
+  margin: 0 0 22px;
+}
+
+.usm-section:last-child {
+  margin-bottom: 0;
+}
+
+.usm-section-title {
+  margin: 0 0 10px;
+  font: var(--eyebrow);
+  letter-spacing: var(--tracking-wider);
+  color: var(--purple-text);
+}
+
+.usm-section-lead {
+  margin: 0 0 12px;
+  font: var(--body-text);
+  color: var(--body);
+}
+
+.usm-source-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.usm-source-item {
+  border: 1px solid var(--border);
+  border-radius: var(--r-tile);
+  padding: 12px 14px;
+  background: var(--surface-alt);
+}
+
+.usm-source-name {
+  margin: 0 0 3px;
+  font: var(--label);
+  color: var(--ink);
+}
+
+.usm-source-desc {
+  margin: 0;
+  font: var(--body-sm);
+  color: var(--body);
+}
+
+.usm-callout {
+  border: 1px solid var(--reach-border);
+  background: var(--reach-bg);
+  border-radius: var(--r-tile);
+  padding: 14px 16px;
+}
+
+.usm-callout .usm-section-title {
+  color: var(--reach-fg);
+}
+
+.usm-callout p {
+  margin: 0 0 10px;
+  font: var(--body-text);
+  color: var(--ink);
+}
+
+.usm-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.usm-callout strong {
+  color: var(--reach-fg);
+}
+
+.usm-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 0;
+}
+
+.usm-stat {
+  flex: 1 1 120px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-tile);
+  padding: 10px 12px;
+  background: var(--surface);
+}
+
+.usm-stat-num {
+  display: block;
+  font: var(--stat);
+  font-size: 22px;
+  color: var(--ink);
+}
+
+.usm-stat-label {
+  display: block;
+  margin-top: 2px;
+  font: var(--meta);
+  color: var(--muted);
+}
+
+.usm-footer-note {
+  margin: 0;
+  font: var(--body-sm);
+  color: var(--muted);
+}
+
+.usm-footer-note + .usm-footer-note {
+  margin-top: 6px;
+}
+
+/* ── Mobile: full-width bottom sheet ─────────────────────────── */
+@media (max-width: 767px) {
+  .usm-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .usm-dialog {
+    max-width: none;
+    max-height: 90vh;
+    width: 100%;
+    border-radius: var(--r-card) var(--r-card) 0 0;
+    transform: translateY(100%);
+  }
+
+  .usm-backdrop.is-open .usm-dialog {
+    transform: translateY(0);
+  }
+
+  .usm-close {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ── Reduced motion (tokens.css sets the global rule; this just
+      avoids fighting it with a conflicting transform state) ──── */
+@media (prefers-reduced-motion: reduce) {
+  .usm-backdrop,
+  .usm-dialog {
+    transition: none;
+  }
+}
+
+@media print {
+  .usm-backdrop {
+    display: none !important;
+  }
+}
