@@ -1,0 +1,14 @@
+{
+  "name": "universe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UniVerse — Rajasthan DTE admissions guide. Static site, no build step.",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build:data": "python tools/build-data.py"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.8"
+  }
+}

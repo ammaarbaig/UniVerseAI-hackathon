@@ -1,0 +1,26 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+assets/js/config.local.js
+
+# Dependencies
+node_modules/
+zapier.js
+package.json
+package-lock.json
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+
+# Scratch
+*.log
+
+# Designs
+Mockups/
+docs/
+tests/
+

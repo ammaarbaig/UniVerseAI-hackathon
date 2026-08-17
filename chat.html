@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat with Uni AI — UniVerse</title>
+<meta name="description" content="Ask Uni AI about Rajasthan DTE engineering and polytechnic admissions — cutoffs, fees, scholarships and placements, sourced from verified records.">
+<link rel="icon" type="image/png" href="assets/img/uni-logo.png">
+<link rel="apple-touch-icon" href="assets/img/uni-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/universe.css">
+<link rel="stylesheet" href="assets/css/chat.css">
+<link rel="stylesheet" href="assets/css/sources-modal.css">
+<!-- Zapier chatbot embed (Task 1). NOTE: loaded from a CDN, so chat.html must be
+     served over http(s) — it will not initialise when the page is opened via
+     file://. index.html and privacy.html do not depend on this and are unaffected. -->
+<script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"><img src="assets/img/uni-logo.png" alt="UniVerse logo" class="brand-logo"></span>
+        <span class="brand-text">
+          <span class="brand-name">UniVerse</span>
+          <span class="brand-eyebrow">RAJASTHAN DTE ADMISSIONS</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="chat.html" class="nav-cta nav-link-current">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>
+          Ask Uni AI
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chat-shell">
+
+    <div class="chat-toolbar">
+      <div class="chat-toolbar__id">
+        <h1>Chat with Uni AI</h1>
+        <p class="chat-toolbar__subtitle">Rajasthan DTE · engineering &amp; polytechnic admissions</p>
+      </div>
+      <button type="button" class="new-question-btn" id="newQuestionBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+        New question
+      </button>
+    </div>
+
+    <!-- Zapier embed (Task 1) — the default chat experience. Hidden only when
+        ?chat=local is present (see assets/js/chat-ui.js). Height/width attributes
+        are demo values from the supplied snippet; both the attributes and the
+        CSS in assets/css/chat.css override them to fill this column. -->
+    <div class="chat-embed-frame" id="chatEmbedFrame">
+      <zapier-interfaces-chatbot-embed
+        is-popup="false"
+        chatbot-id="cmssq12dm000nin6vyq3gnuyd"
+        height="600px"
+        width="100%"></zapier-interfaces-chatbot-embed>
+    </div>
+
+    <!-- Local chat (Task 2) — manual fallback only, reachable via ?chat=local.
+        Stays in the document source at all times (PRD S-12, S-18, S-19); JS
+        toggles visibility, it never removes this markup. -->
+    <!-- <div class="chat-body local-chat-only" id="transcriptScroller">
+
+      <div class="starters">
+        <div class="starters__group">
+          <span class="starters__eyebrow">POPULAR RIGHT NOW</span>
+          <div class="starters__row" id="popularRow"></div>
+        </div>
+        <div class="starters__group">
+          <span class="starters__eyebrow">BROWSE BY TOPIC</span>
+          <div class="starters__row" id="topicsRow"></div>
+        </div>
+      </div>
+
+      <div class="transcript" id="transcript" role="log" aria-live="polite" aria-label="Chat with Uni AI transcript">
+
+        <div class="msg msg--user">My son's REAP rank is 8,420, category OBC-NCL, we live in Kota. Which government colleges can he realistically get for CSE, and what will it cost us for four years?</div>
+
+        <div class="msg-row">
+          <div class="msg-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg></div>
+          <div class="msg msg--uni">
+            <p class="msg__text">Good news — <strong>8,420</strong> in <strong>OBC-NCL</strong> is a workable rank for CSE this year. Three government colleges closed above that rank in 2025, so he has real options rather than one desperate choice. Here they are, safest first:</p>
+
+            <div class="college-list">
+              <div class="college-card">
+                <div class="college-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D5CD8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 18v-7"></path><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M3 22h18"></path><path d="M6 18v-7"></path></svg></div>
+                <div class="college-card__info">
+                  <div class="college-card__name-row">
+                    <div class="college-card__name">Government Engineering College, Ajmer</div>
+                    <span class="chip chip--compact chip--safe">Safe</span>
+                  </div>
+                  <div class="college-card__subtitle">CSE · 120 seats · 135 km from Kota</div>
+                  <div class="college-card__compact-meta">Close 11,240 · ₹2.9 L / 4 yrs</div>
+                </div>
+                <div class="college-card__stat">
+                  <div class="college-card__stat-label">OBC-NCL CLOSE</div>
+                  <div class="college-card__stat-value">11,240</div>
+                </div>
+                <div class="college-card__stat">
+                  <div class="college-card__stat-label">4-YR TOTAL</div>
+                  <div class="college-card__stat-value">₹2.9 L</div>
+                </div>
+                <span class="chip chip--full chip--safe">Safe</span>
+              </div>
+
+              <div class="college-card">
+                <div class="college-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D5CD8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 18v-7"></path><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M3 22h18"></path><path d="M6 18v-7"></path></svg></div>
+                <div class="college-card__info">
+                  <div class="college-card__name-row">
+                    <div class="college-card__name">University College of Engineering, RTU Kota</div>
+                    <span class="chip chip--compact chip--likely">Likely</span>
+                  </div>
+                  <div class="college-card__subtitle">CSE · 90 seats · in your city, no hostel cost</div>
+                  <div class="college-card__compact-meta">Close 9,860 · ₹3.4 L / 4 yrs</div>
+                </div>
+                <div class="college-card__stat">
+                  <div class="college-card__stat-label">OBC-NCL CLOSE</div>
+                  <div class="college-card__stat-value">9,860</div>
+                </div>
+                <div class="college-card__stat">
+                  <div class="college-card__stat-label">4-YR TOTAL</div>
+                  <div class="college-card__stat-value">₹3.4 L</div>
+                </div>
+                <span class="chip chip--full chip--likely">Likely</span>
+              </div>
+
+              <div class="college-card">
+                <div class="college-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D5CD8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 18v-7"></path><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M3 22h18"></path><path d="M6 18v-7"></path></svg></div>
+                <div class="college-card__info">
+                  <div class="college-card__name-row">
+                    <div class="college-card__name">MBM University, Jodhpur</div>
+                    <span class="chip chip--compact chip--reach">Reach</span>
+                  </div>
+                  <div class="college-card__subtitle">CSE · 180 seats · strongest placements of the three</div>
+                  <div class="college-card__compact-meta">Close 8,470 · ₹4.1 L / 4 yrs</div>
+                </div>
+                <div class="college-card__stat">
+                  <div class="college-card__stat-label">OBC-NCL CLOSE</div>
+                  <div class="college-card__stat-value">8,470</div>
+                </div>
+                <div class="college-card__stat">
+                  <div class="college-card__stat-label">4-YR TOTAL</div>
+                  <div class="college-card__stat-value">₹4.1 L</div>
+                </div>
+                <span class="chip chip--full chip--reach">Reach</span>
+              </div>
+            </div>
+
+            <p class="msg__text">On cost: the four-year totals above include tuition, development and exam fees at government rates. If your family income is under ₹8 lakh, he is eligible for the <strong>Mukhyamantri Uchch Shiksha Chhatravritti</strong>, which would bring Ajmer down to roughly ₹1.2 L over four years. I can walk you through that form next.</p>
+
+            <div class="sources">
+              <span class="sources__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5A5F80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></span>
+              <span class="sources__label">Sources</span>
+              <span class="sources__chip">REAP 2025 final allotment</span>
+              <span class="sources__chip">hte.rajasthan.gov.in fee notification</span>
+              <span class="sources__chip">reap2026.in college list</span>
+              <span class="sources__checked">CHECKED 12 AUG 2026</span>
+            </div>
+
+            <div class="action-row">
+              <a class="action-row__btn action-row__whatsapp" target="_blank" rel="noopener" href="https://wa.me/?text=Good%20news%20%E2%80%94%208%2C420%20in%20OBC-NCL%20is%20a%20workable%20rank%20for%20CSE%20this%20year.%20Three%20government%20colleges%20closed%20above%20that%20rank%20in%202025%2C%20so%20he%20has%20real%20options%20rather%20than%20one%20desperate%20choice.%20Here%20they%20are%2C%20safest%20first%3A%0A%0A1.%20Government%20Engineering%20College%2C%20Ajmer%20%E2%80%94%20CSE%20%C2%B7%20120%20seats%20%C2%B7%20135%20km%20from%20Kota%20%E2%80%94%20OBC-NCL%20close%2011%2C240%20%C2%B7%204-yr%20total%20%E2%82%B92.9%20L%20%C2%B7%20Safe%0A2.%20University%20College%20of%20Engineering%2C%20RTU%20Kota%20%E2%80%94%20CSE%20%C2%B7%2090%20seats%20%C2%B7%20in%20your%20city%2C%20no%20hostel%20cost%20%E2%80%94%20OBC-NCL%20close%209%2C860%20%C2%B7%204-yr%20total%20%E2%82%B93.4%20L%20%C2%B7%20Likely%0A3.%20MBM%20University%2C%20Jodhpur%20%E2%80%94%20CSE%20%C2%B7%20180%20seats%20%C2%B7%20strongest%20placements%20of%20the%20three%20%E2%80%94%20OBC-NCL%20close%208%2C470%20%C2%B7%204-yr%20total%20%E2%82%B94.1%20L%20%C2%B7%20Reach%0A%0AOn%20cost%3A%20the%20four-year%20totals%20above%20include%20tuition%2C%20development%20and%20exam%20fees%20at%20government%20rates.%20If%20your%20family%20income%20is%20under%20%E2%82%B98%20lakh%2C%20he%20is%20eligible%20for%20the%20Mukhyamantri%20Uchch%20Shiksha%20Chhatravritti%2C%20which%20would%20bring%20Ajmer%20down%20to%20roughly%20%E2%82%B91.2%20L%20over%20four%20years.%20I%20can%20walk%20you%20through%20that%20form%20next.">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
+                Share on WhatsApp
+              </a>
+              <button type="button" class="action-row__btn action-row__pdf">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>
+                Download as PDF
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="suggestions">
+          <button type="button" class="suggestion-chip">Explain the scholarship form</button>
+          <button type="button" class="suggestion-chip">Compare Ajmer vs RTU Kota placements</button>
+          <button type="button" class="suggestion-chip">What order should he fill choices in?</button>
+        </div>
+
+      </div>
+    </div> -->
+
+    <div class="composer">
+      <div class="composer__box local-chat-only" id="composerBox">
+        <textarea id="composerInput" class="composer__input" rows="1"
+          aria-label="Ask Uni AI a question"
+          placeholder="Ask about cutoffs, fees, scholarships, placements…"></textarea>
+        <button type="button" class="composer__mic" aria-label="Speak your question" tabindex="-1">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19v3"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><rect x="9" y="2" width="6" height="13" rx="3"></rect></svg>
+          Speak
+        </button>
+        <button type="button" class="composer__send" id="sendBtn" aria-label="Send message" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
+      </div>
+      <div class="composer__footer">
+        <p class="composer__note">Uni AI answers only from verified DTE and REAP records. Always confirm final figures on the official portal before paying.</p>
+        <div class="verified-strip">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3F9B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          <span><strong id="verifiedCount">115</strong> colleges · 2025 &amp; 2026 rounds · refreshed as DTE publishes.</span>
+          <a href="#" data-sources-modal>See sources →</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/predictor.js"></script>
+  <script src="assets/js/chat-provider.js"></script>
+  <script src="assets/js/chat-ui.js"></script>
+  <script src="assets/js/sources-modal.js"></script>
+</body>
+</html>
